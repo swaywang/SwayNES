@@ -1,6 +1,7 @@
 import os
 import sys
 from register import Register
+from memory import Memory
 
 class CPU:
     def _init_CPU_registers(self):
@@ -16,5 +17,6 @@ class CPU:
         self.registers['p'].write(0x24)
 
     def __init__(self):
+        self.ram = Memory(0xffff);
         self._init_CPU_registers()
 

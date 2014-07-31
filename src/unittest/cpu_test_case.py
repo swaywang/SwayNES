@@ -22,5 +22,9 @@ class CPUTestCase(unittest.TestCase):
         self.assertEquals(0xfd, self.cpu.registers["sp"].read())
         self.assertEquals(0x24, self.cpu.registers["p"].read())
 
+    def test_cpu_ram_size(self):
+        cpu_memory_len = self.cpu.ram.get_memory_size()
+        self.assertEquals(0xFFFF, cpu_memory_len)
+
 if __name__ == '__main__':
     unittest.main()

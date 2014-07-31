@@ -12,6 +12,9 @@ class Memory:
 
         self._memory[address] = value
 
+    def get_memory_size(self):
+        return self._size
+
     def check_memory_bound(self, address):
         if address < 0 or address > self._size:
             return False
